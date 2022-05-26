@@ -1,7 +1,8 @@
 import matplotlib.pylab as plt
 from CaesarCrypt import caesar_decrypt
+from CheckTheLanguageOfThePhrase import CheckTheLanguageOfThePhrase
 
-ALPHABET = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+ALPHABET = " ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 LETTERS = ' ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 
@@ -79,7 +80,6 @@ def _calculate_key(char_to_check: str) -> list:
 def caesar_crack_with_smart_analysis(text_to_analyse: str) -> []:
     list_of_possibilities = []
 
-    position_of_empty = 0
     freq = _return_frequency_dictionary_of_a_phrase(text_to_analyse)
 
     formatted_freq_list = sorted(freq.items(), key=lambda x: x[1], reverse=True)
@@ -88,13 +88,33 @@ def caesar_crack_with_smart_analysis(text_to_analyse: str) -> []:
     position_keys = _calculate_key(char_to_check)
 
     for index in position_keys:
-        print(index)
-        print(text_to_analyse)
         message_decrypted = caesar_decrypt(text_to_analyse, index)
-        print(message_decrypted)
         list_of_possibilities.append(message_decrypted)
 
     return list_of_possibilities
 
 
+def caesar_crack_with_smart_analysis_and_machine_thinking(text_to_analyse: str) -> []:
+    list_of_possibilities = []
 
+    freq = _return_frequency_dictionary_of_a_phrase(text_to_analyse)
+
+    formatted_freq_list = sorted(freq.items(), key=lambda x: x[1], reverse=True)
+
+    char_to_check = formatted_freq_list[0][0]
+    position_keys = _calculate_key(char_to_check)
+
+    automatic_checker = CheckTheLanguageOfThePhrase()
+
+    for index in position_keys:
+        message_decrypted = caesar_decrypt(text_to_analyse, index)
+
+        automatic_checker.break_the_phrase(message_decrypted)
+        found_language = automatic_checker.return_the_language()
+
+        if found_language.found:
+            print("found a language")
+            break
+        list_of_possibilities.append(message_decrypted)
+
+    return list_of_possibilities
