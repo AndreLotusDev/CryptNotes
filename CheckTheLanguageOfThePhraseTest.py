@@ -37,6 +37,5 @@ class CheckTheLanguageOfThePhraseTest(unittest.TestCase):
         checker.break_the_phrase("xx  xxxxxxxxxxxxxxxxx xxxxxxxxx fds sfg fg gh d h hdf dfgh dfgh dfgh hgfghfghfghfgh dfshosgfhugfhui fghjgfhj sdfgsgdfgdfgfdg")
 
         format_returned = checker.return_the_language()
-        print(format_returned.type_language)
 
         self.assertEqual(IS_INVALID_LANGUAGE, format_returned.found)

@@ -36,6 +36,7 @@ class CheckTheLanguageOfThePhrase:
     def break_the_phrase(self, phrase_to_check: str) -> list:
 
         word_separate: list[str] = phrase_to_check.split(" ")
+
         self.__total_words_in_phrase = len(word_separate)
 
         for word in word_separate:
