@@ -1,3 +1,5 @@
+from collections import namedtuple
+
 import matplotlib.pylab as plt
 from CaesarCrypt import caesar_decrypt
 from CheckTheLanguageOfThePhrase import CheckTheLanguageOfThePhrase
@@ -94,7 +96,7 @@ def caesar_crack_with_smart_analysis(text_to_analyse: str) -> []:
     return list_of_possibilities
 
 
-def caesar_crack_with_smart_analysis_and_machine_thinking(text_to_analyse: str) -> []:
+def caesar_crack_with_smart_analysis_and_machine_thinking(text_to_analyse: str) -> tuple:
     list_of_possibilities = []
 
     freq = _return_frequency_dictionary_of_a_phrase(text_to_analyse)
@@ -106,6 +108,9 @@ def caesar_crack_with_smart_analysis_and_machine_thinking(text_to_analyse: str) 
 
     automatic_checker = CheckTheLanguageOfThePhrase()
 
+    info_to_return = namedtuple("info_to_return", ["found", "type_language", "number_of_tentatives",
+                                                   "list_of_possibilities"])
+
     for index in position_keys:
         message_decrypted = caesar_decrypt(text_to_analyse, index)
 
@@ -113,8 +118,9 @@ def caesar_crack_with_smart_analysis_and_machine_thinking(text_to_analyse: str) 
         found_language = automatic_checker.return_the_language()
 
         if found_language.found:
-            print("found a language")
+            list_of_possibilities.append(message_decrypted)
+            return info_to_return(True, found_language.type_language, len(list_of_possibilities), list_of_possibilities)
             break
         list_of_possibilities.append(message_decrypted)
 
-    return list_of_possibilities
+    return info_to_return(False, "None", len(list_of_possibilities), list_of_possibilities)

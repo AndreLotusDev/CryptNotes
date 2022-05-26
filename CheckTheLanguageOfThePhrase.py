@@ -22,11 +22,13 @@ class CheckTheLanguageOfThePhrase:
     __acceptable_tolerance: int = 50
 
     def __init__(self):
-        words_in_portuguese = io.open(self.__LANGUAGE_PT_BR_TEXT, "r")
-        self.__dic_in_portuguese = words_in_portuguese.read().split("/n")
+        words_in_portuguese = io.open(self.__LANGUAGE_PT_BR_TEXT, "r", encoding="UTF-8")
+        for line in words_in_portuguese:
+            self.__dic_in_portuguese.append(line.split('\n')[0].upper())
 
-        words_in_english = io.open(self.__LANGUAGE_EN_US_TEXT, "r")
-        self.__dic_in_english = words_in_portuguese.read().split("/n")
+        words_in_english = io.open(self.__LANGUAGE_EN_US_TEXT, "r", encoding="UTF-8")
+        for line in words_in_english:
+            self.__dic_in_english.append(line.split('\n')[0].upper())
 
         words_in_portuguese.close()
         words_in_english.close()
@@ -34,7 +36,7 @@ class CheckTheLanguageOfThePhrase:
     def break_the_phrase(self, phrase_to_check: str) -> list:
 
         word_separate: list[str] = phrase_to_check.split(" ")
-        self.__total_words_in_phrase = word_separate.count()
+        self.__total_words_in_phrase = len(word_separate)
 
         for word in word_separate:
             word_found_in_some_language = self.__check_if_word_exist_in_one_dictionary(word)
@@ -55,9 +57,9 @@ class CheckTheLanguageOfThePhrase:
 
     def __add_score(self, language_found: str) -> None:
         if self.__LANGUAGE_PT_BR == language_found:
-            self.COUNT_IN_PORTUGUESE += self.__ONE_MORE_WORD_FOUND
+            self.__count_in_portuguese += self.__ONE_MORE_WORD_FOUND
         elif self.__LANGUAGE_EN_US == language_found:
-            self.COUNT_IN_ENGLISH += self.__ONE_MORE_WORD_FOUND
+            self.__count_in_english += self.__ONE_MORE_WORD_FOUND
 
     @staticmethod
     def __calc_percentage(quantity_found, total_words) -> int:
@@ -65,7 +67,7 @@ class CheckTheLanguageOfThePhrase:
         return int(percentage)
 
     def return_the_language(self) -> tuple:
-        language_info = namedtuple("found", "type_language")
+        language_info = namedtuple("language_info", ["found", "type_language"])
 
         if self.__calc_percentage(self.__count_in_portuguese, self.__total_words_in_phrase) \
                 > self.__acceptable_tolerance:
@@ -74,3 +76,6 @@ class CheckTheLanguageOfThePhrase:
         elif self.__calc_percentage(self.__count_in_english, self.__total_words_in_phrase) \
                 > self.__acceptable_tolerance:
             return language_info(True, "EN-US")
+
+        else:
+            return language_info(False, "NONE")
