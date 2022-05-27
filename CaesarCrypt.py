@@ -9,7 +9,7 @@ def caesar_encrypt(plain_text: str) -> str:
     for char in plain_text:
         index_in_alphabet: int = ALPHABET.find(char)
 
-        # will return a module, with a offset
+        # will return a module, with an offset
         index: int = (index_in_alphabet + KEY) % len(ALPHABET)
 
         cipher_text = cipher_text + ALPHABET[index]
@@ -23,7 +23,7 @@ def caesar_decrypt(cipher_text: str) -> str:
     for char in cipher_text:
         index_in_alphabet: int = ALPHABET.find(char)
 
-        # will return a module, with a offset
+        # will return a module, with an offset
         index: int = (index_in_alphabet - KEY) % len(ALPHABET)
         plain_text = plain_text + ALPHABET[index]
 
