@@ -20,6 +20,6 @@ Never try to use a cryptography type created by yourself in production c:
 
 <h3>To do: </h3>
 <ul>
-  <li>Enhance data structure to use brute force in vegenere , instead of using list, use dictionary/graphs</li>
+  <li>Enhance data structure to use brute force in vigenere , instead of using list, use dictionary/graphs</li>
   <li>Auto detect more dictionary than two (EN-US, PT-BR)</li>
 </ul>
