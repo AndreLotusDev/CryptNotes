@@ -1,25 +1,16 @@
 # CryptPython
 
-Just to study different types of cryptografy 
-<br/>
-<hr/>
+A project dedicated to studying and exploring different types of cryptography algorithms.
 
-Never try to use a cryptography type created by yourself in production c:
-<br/>
-<hr/>
+> **Warning:** Do **not** use custom-built cryptographic algorithms in production environments.
 
-<h3>Types created: (i will implement more after)</h3>
-<ul>
-  <li>Caesar</li>
-  <li>Vigenere</li>
-  <li>One time pad</li>
-</ul>
+## Implemented Ciphers
 
-<br/>
-<hr/>
+- **Caesar Cipher**
+- **Vigenère Cipher**
+- **One-Time Pad**
 
-<h3>To do: </h3>
-<ul>
-  <li>Enhance data structure to use brute force in vigenere , instead of using list, use dictionary/graphs</li>
-  <li>Auto detect more dictionary than two (EN-US, PT-BR)</li>
-</ul>
+## To-Do List
+
+- Enhance data structures to enable brute-force attacks on the Vigenère cipher. Transition from using lists to dictionaries or graphs for better performance.
+- Implement auto-detection for more dictionaries beyond the current support of English (EN-US) and Portuguese (PT-BR).
