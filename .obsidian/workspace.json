@@ -1,0 +1,155 @@
+{
+  "main": {
+    "id": "5861a54721bc16b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea74c4501c9b4805",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2c2bafd3965b1e9c",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "MainNotes/Types.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f9998c8a49878c14",
+    "type": "split",
+    "children": [
+      {
+        "id": "aaef376b4a98a46f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "48d2bbc8590af1aa",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ec75e457d2e2d42c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "77d60349c0212cf0",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b456b99aa98b665b",
+    "type": "split",
+    "children": [
+      {
+        "id": "ed4b21557a166ee6",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4bd0e4d0c787bc15",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "MainNotes/Types.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a13c0f03898b3e99",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "MainNotes/Types.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "8858c2bb7ca52c35",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "1caa5e8944f443fb",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "MainNotes/Types.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Abrir a troca rápida": false,
+      "graph:Abrir visualização em gráfico": false,
+      "canvas:Criar novo canvas": false,
+      "daily-notes:Abrir a nota de hoje": false,
+      "templates:Inserir modelo": false,
+      "command-palette:Abrir paleta de comandos": false
+    }
+  },
+  "active": "2c2bafd3965b1e9c",
+  "lastOpenFiles": [
+    "MainNotes/TheCaesarCipher.md",
+    "MainNotes/Types.md",
+    "PythonCode/README.md"
+  ]
+}
